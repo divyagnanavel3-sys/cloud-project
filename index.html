@@ -1,10 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Cloud Project</title>
+    <title>Cloud Project</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f4f6f8;
+        }
+        header {
+            background: #0d6efd;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #0d6efd;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #084298;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello from Cloud 🚀</h1>
-    <p>This is my 3-tier project</p>
+
+<header>
+    <h1>🚀 My Cloud Project</h1>
+    <p>3-Tier Architecture Demo</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>📌 Project Overview</h2>
+        <p>This project demonstrates a cloud-based web application with frontend and backend deployed using Render.</p>
+    </div>
+
+    <div class="card">
+        <h2>⚙️ Tech Stack</h2>
+        <ul>
+            <li>Frontend: HTML</li>
+            <li>Backend: Node.js (Express)</li>
+            <li>Deployment: Render</li>
+            <li>Version Control: GitHub</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🔗 Test Backend API</h2>
+        <button onclick="testAPI()">Check API</button>
+        <p id="result"></p>
+    </div>
+
+</div>
+
+<script>
+function testAPI() {
+    fetch('/api')
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('result').innerText = data.message;
+    });
+}
+</script>
+
 </body>
 </html>
