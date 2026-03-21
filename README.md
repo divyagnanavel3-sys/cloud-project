@@ -15,10 +15,10 @@ This project demonstrates a simple 3-tier architecture deployed on cloud.
 - Cloud deployment
 
 ## Live Demo
-https://your-render-url.onrender.com
+https://cloud-project-d4e8.onrender.com
 
 ## API Endpoint
-https://your-render-url.onrender.com/api
+https://cloud-project-d4e8.onrender.com/api
 
 ## Screenshots
 (Add screenshots here)
