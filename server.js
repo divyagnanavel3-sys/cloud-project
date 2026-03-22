@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // 🔥 MongoDB Connection
-mongoose.connect('mongodb+srv://divyagnanavel33_db_user:zJ5V1zJ7mZuPK71R@mycluster.vopr9dp.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://divyagnanavel33_db_user:divyaGNANAVEL@mycluster.vopr9dp.mongodb.net/test?retryWrites=true&w=majority')
 .then(() => console.log("DB Connected 🔥"))
 .catch(err => console.log("DB Error:", err));
 
@@ -12,7 +12,7 @@ mongoose.connect('mongodb+srv://divyagnanavel33_db_user:zJ5V1zJ7mZuPK71R@myclust
 app.use(express.json());
 app.use(express.static('.'));
 
-// Root route (test)
+// Root route
 app.get('/', (req, res) => {
     res.send("Backend working 🔥");
 });
@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 // Schema
 const User = mongoose.model('User', { name: String });
 
-// API route
+// ✅ API route (error-safe)
 app.get('/api', async (req, res) => {
     try {
         const user = new User({ name: "Divya" });
@@ -28,11 +28,12 @@ app.get('/api', async (req, res) => {
 
         res.json({ message: "Data saved in DB 🔥" });
     } catch (error) {
-        res.status(500).json({ error: "Something went wrong" });
+        console.log("API ERROR:", error);
+        res.json({ message: "API working but DB issue" });
     }
 });
 
-// Server start
+// Server
 app.listen(3000, () => {
     console.log("Server running on port 3000");
 });
