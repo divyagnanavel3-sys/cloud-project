@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-// 🔥 MongoDB connection
+// 🔥 MongoDB connect
 mongoose.connect('mongodb+srv://divyagnanavel33_db_user:divyaGNANAVEL@mycluster.vopr9dp.mongodb.net/?appName=myCluster')
 .then(() => console.log("DB Connected 🔥"))
 .catch(err => console.log(err));
