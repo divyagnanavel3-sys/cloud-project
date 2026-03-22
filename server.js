@@ -19,6 +19,8 @@ app.get('/api', async (req, res) => {
     res.json({ message: "Data saved in DB 🔥" });
 });
 
+
+
 app.use(express.static('.'));
 
 app.listen(3000, () => {
